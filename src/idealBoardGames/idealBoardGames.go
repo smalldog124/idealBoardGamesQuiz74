@@ -1,17 +1,15 @@
 package idealBoardGames
 
 func Quiz74(player []int) []int {
-	pas := []int{
-		1, 3, 5, 7, 9,
-		11, 13, 15, 17, 19,
-		21, 23, 25, 27, 29,
-		31, 33, 35, 37, 39,
-		41, 43, 45, 47, 49,
-		51, 53, 55, 57, 59,
-		61, 63, 65, 67, 69,
-		71, 73, 75, 77, 79,
-		81, 83, 85, 87, 89,
-		91, 93, 95, 97, 99,
+	people := []int{}
+	for i := 0; i < len(player); i += 2 {
+		if i+1 < len(player) {
+			people = append(people, player[i])
+		} else {
+			people = append(people, player[i])
+			people = people[1:]
+		}
 	}
-	return pas
+
+	return people
 }
